@@ -131,3 +131,35 @@ function likes(names) {
         return names[0]+", "+names[1]+" and "+ other +" others like this";
     }
 }
+
+______
+
+Build up a method that takes a positive integer and formats it to a 'time - like' format.
+
+The method must raise an exception if its hour length is less than 3 digits and greater than 4.
+
+Examples:
+800   --> '8:00'
+1000  --> '10:00'
+1451  --> '14:51'
+3351  --> '33:51'
+10000 --> raise an exception
+
+link: https://www.codewars.com/kata/51e000d070fe4414000003f0/train/javascript/68e3dfefbcbf0866ce640eab
+
+solution:
+
+function solution(hour) {
+    const h = String(hour);
+  if(h.length>2 && h.length < 5){
+      if (h.length === 3){
+            return h.at(0)+":"+h.slice(1);
+        }else{
+            return h.slice(0,2)+":"+h.slice(2);
+        }
+  }
+   else{
+     throw new Error("raise an exception");   
+    }
+}
+______
