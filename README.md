@@ -25,6 +25,45 @@ ____
 
 #7 Kyu
 
+**
+You are going to be given a non-empty string. Your job is to return the middle character(s) of the string.
+
+If the string's length is odd, return the middle character.
+If the string's length is even, return the middle 2 characters.
+Examples:
+"test" --> "es"
+"testing" --> "t"
+"middle" --> "dd"
+"A" --> "A"
+
+link: https://www.codewars.com/kata/56747fd5cb988479af000028/train/javascript/68e3dafc2cbc1e7542640e69
+
+solution: 
+
+function getMiddle(s) {
+  let index1 = ((s.length-1)/2);
+  let index2 = s.length/2;
+  
+  if (s.length === 0){
+    return '';
+  }
+  else if(s.length > 0 && s.length < 3){
+    return s;
+  }else{
+     if(s.length%2 !== 0){
+         return s.at(index1);
+     }else{
+            let first = s.slice(0,index2);
+            let second = s.slice(index2);
+            return first.at(-1)+second.at(0);
+        }
+     }
+  }
+
+______
+
+
+
 #6 Kyu
 
 _____
