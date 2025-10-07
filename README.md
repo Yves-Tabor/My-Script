@@ -62,6 +62,41 @@ function getMiddle(s) {
 
 ______
 
+Given a string, determine if it's a valid identifier.
+
+Here is the syntax for valid identifiers:
+Each identifier must have at least one character.
+The first character must be picked from: alpha, underscore, or dollar sign. The first character cannot be a digit.
+The rest of the characters (besides the first) can be from: alpha, digit, underscore, or dollar sign. In other words, it can be any valid identifier character.
+Examples of valid identifiers:
+i
+wo_rd
+b2h
+Examples of invalid identifiers:
+1i
+wo rd
+!b2h
+
+link: https://www.codewars.com/kata/563a8656d52a79f06c00001f/train/javascript/68e53590a3a4e82702716bd9
+solution: 
+function isValid(str) {
+   if (!str || str.length === 0) {
+        return false;
+    }
+    const firstChar = str[0];
+    if (!(/[a-zA-Z_$]/.test(firstChar))) {
+        return false;
+    }
+    for (let i = 1; i < str.length; i++) {
+        const ch = str[i];
+        if (!(/[a-zA-Z0-9_$]/.test(ch))) {
+            return false;
+        }
+    }
+    return true;
+}
+_______
+
 
 
 #6 Kyu
