@@ -26,6 +26,34 @@ ____
 #7 Kyu
 
 **
+You are given a string of words and numbers. Extract the expression including:
+
+the operator: either addition ("gains") or subtraction ("loses")
+the two numbers that we are operating on
+Return the result of the calculation.
+
+Notes:
+
+"loses" and "gains" are the only two words describing operators
+No fruit debts nor bitten apples = The numbers are integers and no negatives
+Examples
+"Panda has 48 apples and loses 4"  -->  44
+"Jerry has 34 apples and gains 6"  -->  40
+
+link: https://www.codewars.com/kata/57b9fc5b8f5813384a000aa3/train/javascript/68e639c4173bb7a84f8d221c
+
+solution: 
+function calculate(string) {
+  const ar = string.split(" ");
+    const num = ar.filter((x)=> /\d/.test(x)).map((x)=> Number(x));
+    if(ar.at(-2) === 'gains'){
+        return num[0] + num[1];
+    }else{
+       return num[0] - num[1];
+    }
+}
+
+______
 You are going to be given a non-empty string. Your job is to return the middle character(s) of the string.
 
 If the string's length is odd, return the middle character.
