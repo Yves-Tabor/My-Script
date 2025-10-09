@@ -265,3 +265,19 @@ const toUnderScore = name => {
     const ar = str.replace(/^_/, '').replaceAll("__",'_');
   return ar;
 }
+___________
+
+Modify the kebabize function so that it converts a camel case string into a kebab case.
+
+"camelsHaveThreeHumps"  -->  "camels-have-three-humps"
+"camelsHave3Humps"  -->  "camels-have-humps"
+"CAMEL"  -->  "c-a-m-e-l"
+Notes:
+
+the returned string should only contain lowercase letters
+
+link:https://www.codewars.com/kata/57f8ff867a28db569e000c4a/train/javascript/68e7dab387aa1231733681bb
+solution:
+function kebabize(str) {
+    return str.replace(/[A-Z]/g, char => "-"+char.toLowerCase()).replace(/\d+|^-/g, '');
+}
