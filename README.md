@@ -21,7 +21,8 @@ function betterThanAverage(classPoints, yourPoints) {
   const average = classPoints.reduce((sum, val) => sum + val, 0) / classPoints.length;
   return yourPoints > average;
 }
-____
+___________________
+___________________
 
 #7 Kyu
 
@@ -123,7 +124,41 @@ function isValid(str) {
     }
     return true;
 }
-_______
+
+___________
+
+Example
+input: "abcd", [0, 3, 1, 2]
+output: "acdb"
+Explanation
+The character 'a' is placed at index 0.
+
+The character 'b' is placed at index 3.
+
+The character 'c' is placed at index 1.
+
+The character 'd' is placed at index 2.
+
+Notes
+The string and the array will be of equal length.
+
+The string will contain valid characters (A-Z, a-z, or 0-9);
+the array will contain valid indices.
+
+link: https://www.codewars.com/kata/5822d89270ca28c85c0000f3/train/javascript/68876139271018918f25facb
+solution: 
+function scramble(str, indices) {
+  const result = Array(str.length);
+
+  for (let i = 0; i < str.length; i++) {
+    result[indices[i]] = str[i];
+  }
+
+  return result.join('');
+}
+
+___________________________________________________________
+____________________________________________________________
 
 
 
