@@ -365,6 +365,23 @@ Solution:
 function solution(...args) {
   return new Set(args).size !== args.length;
 }
+
+____________
+
+How can you remove duplication without Set method?
+
+Solution: 
+const remove = array =>{
+    const result = [];
+    for(let el of array){
+        if(!result.includes(el)){
+            const pusher = result.push(el);
+        }
+    }
+    return result;
+}
+
+console.log(remove([2,4,4,5,5,6]));
 ____________
 
 
