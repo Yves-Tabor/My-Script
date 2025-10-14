@@ -200,7 +200,26 @@ ____________________________________________________________
 
 #6 Kyu
 
-_____
+______
+
+You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
+
+Examples
+[2, 4, 0, 100, 4, 11, 2602, 36] -->  11 (the only odd number)
+
+[160, 3, 1719, 19, 11, 13, -21] --> 160 (the only even number)
+
+Link: https://www.codewars.com/kata/5526fc09a1bbd946250002dc/train/javascript/68923001bf46fa6cb607aa6d
+Solution:
+const findOutlier = integers =>{
+  if(integers.length<3) return 0;
+  else{
+    if(integers.filter((int)=> int%2 === 0).length >1) return Number(integers.filter((int)=> int%2 !== 0));
+    return Number(integers.filter((int)=> int%2 === 0));
+  }
+}
+
+______
 /*Complete the solution so that the function will break up camel casing, using a space between words.
 
 Example
@@ -418,9 +437,67 @@ const remove = array =>{
 }
 
 console.log(remove([2,4,4,5,5,6]));
-____________
+
+__________________________________________________
+__________________________________________________
+
+#5 Kyu
+
+______
+
+In this kata, you will make a function that converts between camelCase, snake_case, and kebab-case.
+
+You must write a function that changes to a given case. It must be able to handle all three case types:
+
+js> changeCase("snakeCase", "snake")
+"snake_case"
+js> changeCase("some-lisp-name", "camel")
+"someLispName"
+js> changeCase("map_to_all", "kebab")
+"map-to-all"
+js> changeCase("doHTMLRequest", "kebab")
+"do-h-t-m-l-request"
+js> changeCase("invalid-inPut_bad", "kebab")
+undefined
+js> changeCase("valid-input", "huh???")
+undefined
+js> changeCase("", "camel")
+""
+Your function must deal with invalid input as shown, though it will only be passed strings. Furthermore, all valid identifiers will be lowercase except when necessary, in other words on word boundaries in camelCase.
+
+(Any translations would be greatly appreciated!)
+
+Link: https://www.codewars.com/kata/59be8c08bf10a49a240000b1/train/javascript/68e2d8cf165b2d7dc67a8a6f
+Solution: 
+function changeCase(input, targetCase) {
+  if (typeof input !== 'string' || typeof targetCase !== 'string') return undefined;
+  if (!['camel', 'snake', 'kebab'].includes(targetCase)) return undefined;
+  if (input === '') return '';
+
+  let words = [];
+
+  if (/^[a-z]+(?:[A-Z][a-z]*)*$/.test(input)) {
+    words = input.split(/(?=[A-Z])/).map(w => w.toLowerCase());
+  } else if (/^[a-z]+(?:_[a-z]+)*$/.test(input)) {
+    words = input.split('_');
+  } else if (/^[a-z]+(?:-[a-z]+)*$/.test(input)) {
+    words = input.split('-');
+  } else {
+    return undefined;
+  }
 
 
+  if (targetCase === 'camel') {
+    return words[0] + words.slice(1).map(w => w[0].toUpperCase() + w.slice(1)).join('');
+  }
 
-    .join(" ");
-};
+  if (targetCase === 'snake') {
+    return words.join('_');
+  }
+
+  if (targetCase === 'kebab') {
+    return words.join('-');
+  }
+
+  return undefined;
+}
