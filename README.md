@@ -41,6 +41,22 @@ const capitalizeWord = word => {
   word.charCodeAt(0) < 96 ? return word;
   return word[0].toUpperCase()+word.slice(1);
 }
+_______________
+
+Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+
+Example:
+["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+
+None of the arrays will be empty, so you don't have to worry about that!
+
+Link: https://www.codewars.com/kata/5769b3802ae6f8e4890009d2/train/javascript/68c6a77e3571de5829234c52
+Solution:
+function removeEveryOther(arr){
+  return arr.filter((_, index) => index % 2 === 0);
+}
+
+_______________
 ___________________
 ___________________
 
