@@ -492,7 +492,7 @@ function changeCase(input, targetCase) {
   }
 
   if (targetCase === 'snake') {
-    return words.join('_');
+    return words.join('_'); 
   }
 
   if (targetCase === 'kebab') {
