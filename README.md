@@ -57,12 +57,33 @@ function removeEveryOther(arr){
 }
 
 _______________
-___________________
-___________________
+
+_______________________________________________________
+_______________________________________________________
 
 #7 Kyu
 
 **
+
+Write a function that takes a single non-empty string of only lowercase and uppercase ascii letters (word) as its argument, and returns an ordered list containing the indices of all capital (uppercase) letters in the string.
+
+Example (Input --> Output)
+"CodEWaRs" --> [0,3,4,6]
+
+Link: https://www.codewars.com/kata/539ee3b6757843632d00026b/train/javascript/68a36f32b02e9d523d76daa8
+Solution: 
+function capitals(word) {
+  const result = [];
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === word[i].toUpperCase()) {
+      result.push(i);
+    }
+  }
+  return result;
+}
+
+________________
+
 You are given a string of words and numbers. Extract the expression including:
 
 the operator: either addition ("gains") or subtraction ("loses")
