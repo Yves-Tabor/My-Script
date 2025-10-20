@@ -65,6 +65,22 @@ _______________________________________________________
 
 **
 
+Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+
+Examples
+"This is an example!" ==> "sihT si na !elpmaxe"
+"double  spaces"      ==> "elbuod  secaps"
+
+Link: https://www.codewars.com/kata/5259b20d6021e9e14c0010d4/train/javascript/6889da347a5bbedb27d5fc4b
+Solution:
+let reverseWords = (str) => {
+  return str
+    .split(' ').map(word => word.split('').reverse().join(''))
+    .join(' ');
+};
+
+_____________
+
 Write a function that takes a single non-empty string of only lowercase and uppercase ascii letters (word) as its argument, and returns an ordered list containing the indices of all capital (uppercase) letters in the string.
 
 Example (Input --> Output)
@@ -522,3 +538,5 @@ function changeCase(input, targetCase) {
 
   return undefined;
 }
+____________
+
