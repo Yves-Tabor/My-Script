@@ -1,5 +1,5 @@
 # My-Script
-Some exercices or katas I did
+Some exercices or katas I did 
 
 #8 Kyu
 
