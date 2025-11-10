@@ -575,3 +575,41 @@ function changeCase(input, targetCase) {
 }
 ____________
 
+Given a string, remove any characters that are unique from the string.
+
+Example:
+
+input: "abccdefee"
+
+output: "cceee"
+
+Link: https://www.codewars.com/kata/5a1dc4baffe75f270200006b/train/javascript/69126366572e5cddddb061f7
+Solution: 
+
+const onlyDuplicates = (str)=> {
+    const ar = [];
+    const dup = [];
+    for(let char of str){
+        if(!ar.includes(char)){
+            ar.push(char);
+        }
+        else{
+            dup.push(char);
+        }
+    }
+    const unicDup = [];
+    for(let char of dup){
+        if(!unicDup.includes(char)){
+            unicDup.push(char);
+        }
+    }
+    const result = [];
+    for(let char of str){
+        for(item of unicDup){
+            if(char === item){
+                result.push(char)
+            }
+        }
+    }
+    return result.join("");
+}
