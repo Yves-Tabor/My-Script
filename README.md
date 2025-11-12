@@ -1,3 +1,4 @@
+
 # My-Script
 Some exercices or katas I did
 
@@ -613,7 +614,43 @@ const onlyDuplicates = (str)=> {
     }
     return result.join("");
 }
-___________________
+_____________
+
+Exercise on object list
+
+// Take a list as input and output: {
+//     id: [ 1, 2, 3 ],
+//     name: [ 'Alice', 'Bob', 'Charlie' ]
+//      grades: [...]
+// }
+
+const enlist = list =>{
+    const names = [];
+    const ages = [];
+    const grades = [];
+    for(let obj of list){
+    let arrays = Object.values(obj);
+    names.push(arrays[0])
+    }
+    for(let obj of list){
+    let arrays = Object.values(obj);
+    ages.push(arrays[1])
+    }
+    for(let obj of list){
+    let arrays = Object.values(obj);
+    grades.push(arrays[2])
+    }
+    console.log(names)
+    console.log(ages)
+    console.log(grades)
+}
+
+const students = [
+  { name: "Alice", age: 21, grade: "A" },
+  { name: "Bob", age: 22, grade: "B" },
+  { name: "Charlie", age: 20, grade: "A" },
+];
+enlist(students);
 
 
 
