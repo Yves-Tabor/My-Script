@@ -82,7 +82,20 @@ Have fun coding it and please don't forget to vote and rank this kata! :-)
 
 I have also created other katas. Take a look if you enjoyed this kata!
 
+Link: https://www.codewars.com/kata/5813d19765d81c592200001a/train/javascript/6918efced572072876c557e5
+Sol=lution: 
+function dontGiveMeFive(start, end){ 
+    let iterator = [];
+  for(let i=start; i<=end; i++){
+      if(!i.toString().includes('5')){
+     iterator.push(Number(i));
+      }
+  }
+  return iterator.length;
+}
+
 ____________
+
 You are given an initial 2-value array (x). You will use this to calculate a score.
 
 If both values in (x) are numbers, the score is the sum of the two. If only one is a number, the score is that number. If neither is a number, return 'Void!'.
