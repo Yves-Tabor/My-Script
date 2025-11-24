@@ -603,8 +603,54 @@ function changeCase(input, targetCase) {
 
   return undefined;
 }
-____________
+______________
 
+You have two arguments: string - a string of random letters(only lowercase) and array - an array of strings(feelings). Your task is to return how many specific feelings are in the array.
+For example:
+string -> 'yliausoenvjw'
+array -> ['anger', 'awe', 'joy', 'love', 'grief']
+output -> '3 feelings.' // 'awe', 'joy', 'love'
+
+string -> 'griefgriefgrief'
+array -> ['anger', 'awe', 'joy', 'love', 'grief']
+output -> '1 feeling.' // 'grief'
+
+string -> 'abcdkasdfvkadf'
+array -> ['desire', 'joy', 'shame', 'longing', 'fear']
+output -> '0 feelings.'
+If the feeling can be formed once - plus one to the answer.
+
+If the feeling can be formed several times from different letters - plus one to the answer.
+
+Eeach letter in string participates in the formation of all feelings. 'angerw' -> 2 feelings: 'anger' and 'awe'.
+
+Link: https://www.codewars.com/kata/5a33ec23ee1aaebecf000130/train/javascript/68da4c907b629b88b520da73
+Solution: function countFeelings(string, array) {
+    let counter = [];
+    
+    const parsing = word =>{
+        const tests = [];
+        for(let char of word){
+            if(string.includes(char)){
+                tests.push(true);
+            }else{
+                tests.push(false);
+            }
+        }
+        if(tests.includes(false)){
+        }else{
+            return counter.push(true);
+        }
+    }
+    for(let feeling of array){
+        parsing(feeling);
+    }
+
+  return counter.length === 1 ? `${counter.length} feeling.` : `${counter.length} feelings.`;
+
+}
+
+______________
 Given a string, remove any characters that are unique from the string.
 
 Example:
