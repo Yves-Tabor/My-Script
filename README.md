@@ -84,7 +84,7 @@ Have fun coding it and please don't forget to vote and rank this kata! :-)
 I have also created other katas. Take a look if you enjoyed this kata!
 
 Link: https://www.codewars.com/kata/5813d19765d81c592200001a/train/javascript/6918efced572072876c557e5
-Sol=lution: 
+Solution: 
 function dontGiveMeFive(start, end){ 
     let iterator = [];
   for(let i=start; i<=end; i++){
