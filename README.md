@@ -1,4 +1,3 @@
-
 # My-Script
 Some exercices or katas I did
 
